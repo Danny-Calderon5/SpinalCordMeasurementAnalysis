@@ -1,0 +1,93 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 HelveticaNeue-BoldItalic;
+\f3\fnil\fcharset0 HelveticaNeue-Italic;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs34 \cf0 CODE\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 for table of measurements:
+\f1\b0 \
+measurements = [\'91Measurement 1\'92, \'91Measurement 2\'92, Measurement 3\'92, \'91Measurement 4\'92, \'91Measurement 5\'92]\
+segment_measurements = \{\
+    \'92T13\'92: [A, B, C, D, E],\
+    \'91L1\'92: [A, B, C, D, E],\
+    \'91L2\'92 : [A, B, C, D, E]\
+        
+\f0\b CAN ADD MORE HERE (L2, L3, etc.)
+\f1\b0 \
+\}\
+df_segment_measurements = pd.DataFrame(data=segment_measurements, index=measurements)\
+df_segment_measurements1\
+\
+
+\f0\b for distribution plot:
+\f1\b0 \
+import seaboard as sns\
+sis.displot(df_segment_measurements.loc[df_segment_measurements.L1 == \'91
+\f2\i\b ??\'92, \'91??
+\f1\i0\b0 \'92 ], hist=False, label = \'91L1\'92
+\f2\i\b \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\i0\b0 \cf0 sis.displot(df_segment_measurements.loc[df_segment_measurements.L1 == \'91
+\f2\i\b ??\'92, \'91??
+\f1\i0\b0 \'92 ], hist=False, label = \'91L1\'92\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f3\i \cf0 ^I don\'92t need to refine, just want all 5 measurements plotted out. \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\i0 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 for statistical significance:
+\f1\b0 \
+from spicy.stats import f_oneway\
+F, oval = f_oneway(df_segment_measurements.loc[df_segment_measurements.L1 == \'91
+\f2\i\b ??\'92, \'91??
+\f1\i0\b0 \'92])\
+				df_segment_measurements.loc[df_segment_measurements.L2 == \'91
+\f2\i\b ??\'92, \'91??
+\f1\i0\b0 \'92])\
+print( \'91p-value for one way anova = \'91, pval)\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f3\i \cf0 ^again Im not sure what to put here for just a statistical analysis between the 5 measurements of each segment\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\i0 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 For only one region extraction:\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 df.segmentmeasurements.loc[\'91measurement 1\'92 : \'91measurement 5\'92, \'91L1\'92 : \'91L6\'92]\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 to add new column (new 5 measurements for a new segment) :\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 df.segmentmeasurements1[ \'91Co1\'92 ] = [A, B, C, D, E]\
+df.segmentmeasurements1\
+}
